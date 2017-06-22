@@ -1,0 +1,99 @@
+span{
+  display: inline-block;
+}
+#First {
+  height: 19px;
+}
+
+body {
+  background: lightblue;
+}
+
+p {
+  margin: 0;
+  background-color: white;
+}
+
+#refresh {
+  background-color: white;
+  display: inline-block;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+/* #Mainbody {
+  display: inline-block;
+  height: 308px;
+  border: solid darkgrey 2px;
+  margin: auto;
+  position: absolute;
+  left: 9px;
+  top: 55px;
+} */
+
+#Variables {
+display: inline-block;
+  width: 249px;
+  border-right: solid darkgrey 2px;
+  float: left;
+}
+
+#First {
+  background-color: white;
+  width: 209px;
+  margin: 0px;
+  float: left;
+  padding-top: 2px;
+}
+
+#VariableAmount {
+  width: 36px;
+  float: left;
+}
+
+#VariableRules {
+  padding-top: 2px;
+  float: left;
+  background-color: white;
+}
+
+.notnamed {
+  color: red;
+  width: 79px;
+  border: 2px dotted red;
+}
+
+.named {
+  color: black;
+  width: 81px;
+  border: 1px solid black;
+}
+
+#simulationArea {
+  width: calc(100% - 252px);
+  max-width: 449px;
+  min-width: 249px;
+  height: 308px;
+  background-color: white;
+  float: left;
+  overflow: auto;
+}
+
+.oddbox {
+  display: inline-block;
+  float: left;
+}
+
+.arrayodds {
+  width: 50px;
+  float: right;
+}
+.width {
+  width: 249px;
+}
+.resultblock {
+  width: 100%;
+  border-bottom: 2px solid blue;
+}
