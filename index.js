@@ -111,11 +111,11 @@ function RunSimulationPercent() {
   }
   if (Ptotal && Lsafe) {
     for (var P = 0; P < literations; P++) {
-      math = Math.floor(Math.random() * 100);
-      console.log(math.toFixed(2));
       if (document.getElementById("checkyes").checked){
       inputsHTML = "";
         for (var PL = 0; PL < mynodelist.length; PL++) {
+       math = Math.floor(Math.random() * 100);
+      console.log(math.toFixed(2));
         if (Number(mynodelist[PL].value) >= math) {
           inputsHTML += " " + arrayinfo[PL] + ". ";
         }
