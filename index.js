@@ -67,7 +67,12 @@ var randomorder = function randomorder() {
       // simulationArea.innerhtml += RN + " " + math + arrayinfo + "<br>";s
       if (matharray.indexOf(mynodelist[math].value) === -1) {
         matharray.unshift(mynodelist[math].value);
-        HTMLdat += "Literation " + matharray.length + "<div class='resultblock'> " + matharray[0] + "<br></div>";
+        HTMLdat +=
+          "Literation " +
+          matharray.length +
+          "<div class='resultblock'> " +
+          matharray[0] +
+          "<br></div>";
       }
       if (matharray.length === mynodelist.length) {
         break;
@@ -110,6 +115,18 @@ function RunSimulationPercent() {
     Ptotal = false;
   }
   if (Ptotal && Lsafe) {
+    math = 0;
+    inputsHTML = "";
+    simulationArea.innerHTML = "";
+          var mathtwo = 0;
+    if (document.getElementById("checkno").checked) {
+      for (var PN = 0; PN < mynodelist.length; PN++) {
+mathtwo = math + Number(mynodelist[PN].value)
+        matharray[PN] = new Array(math, mathtwo);
+        math = Number(mynodelist[PN].value);
+      }
+      math = 0;
+    }
     for (var P = 0; P < literations; P++) {
       if (document.getElementById("checkyes").checked){
       inputsHTML = "";
@@ -118,11 +135,23 @@ function RunSimulationPercent() {
       console.log(math.toFixed(2));
         if (Number(mynodelist[PL].value) >= math) {
           inputsHTML += " " + arrayinfo[PL] + ". ";
+          }
         }
-      } 
-        math = P + 1;
-simulationArea.innerHTML += "<div class='resultblock'>" + math + inputsHTML + "</div>";
-    }
+      } else {
+          var RNGp = Math.floor(Math.random() * 100);
+for (var PF = 0; PF < mynodelist.length; PF++) {
+if (RNGp > matharray[PF][0] && RNGp <= matharray[PF][1]){
+   inputsHTML = " " + arrayinfo[PF] + ". ";
+break;
+} else if (PF + 1 === mynodelist.length){   
+inputsHTML = " NO RESULT. ";
+break;
+}
+}
+      }
+            math = P + 1;
+        simulationArea.innerHTML +=
+          "<div class='resultblock'>" + math + inputsHTML + "</div>";
     }
   }
 }
@@ -154,7 +183,15 @@ var percentchoices = function percentchoices() {
       VariableAmount.value +
       "</p><br><p>Percent odds of variables: <span id='percent'></span></p>" +
       inputsHTML +
-      "<br>Allow multiple results per literation? YES <input id='checkyes' type='checkbox' onclick='(document.getElementById(" + '"' + "checkno" + '"' + ").checked = false)' checked> NO <input id='checkno' type='checkbox' onclick='(document.getElementById(" + '"' + "checkyes" + '"' + ").checked = false)'><span>Literations<input id='literations' type='number' step='1' min='10' max='1000' onchange='percentcheck(this)' value='10'></span><input id='Submit' onclick='RunSimulationPercent()' type='submit' value='Submit for simulation'>";
+      "<br>Allow multiple results per literation? YES <input id='checkyes' type='checkbox' onclick='(document.getElementById(" +
+      '"' +
+      "checkno" +
+      '"' +
+      ").checked = false)' checked> NO <input id='checkno' type='checkbox' onclick='(document.getElementById(" +
+      '"' +
+      "checkyes" +
+      '"' +
+      ").checked = false)'><span>Literations<input id='literations' type='number' step='1' min='10' max='1000' onchange='percentcheck(this)' value='10'></span><input id='Submit' onclick='RunSimulationPercent()' type='submit' value='Submit for simulation'>";
     percenttotalbox = document.getElementById("percent");
     math = math * 0.01;
     percenttotalbox.innerHTML = math;
