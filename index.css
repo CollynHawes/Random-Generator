@@ -1,3 +1,6 @@
+span{
+  display: inline-block;
+}
 #First {
   height: 19px;
 }
@@ -31,7 +34,7 @@ p {
 } */
 
 #Variables {
-  height: 308px;
+display: inline-block;
   width: 249px;
   border-right: solid darkgrey 2px;
   float: left;
@@ -85,4 +88,12 @@ p {
 
 .arrayodds {
   width: 50px;
+  float: right;
+}
+.width {
+  width: 249px;
+}
+.resultblock {
+  width: 100%;
+  border-bottom: 2px solid blue;
 }
